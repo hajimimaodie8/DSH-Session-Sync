@@ -55,7 +55,14 @@ xcopy /E /I /Y "dsh-session-sync" "%APPDATA%\dsh-desktop\harness\profiles\node_m
 
 ```text
 dsh-session-sync/
-├── package.json
+├── package.json         插件清单（含 dsh.bundle 声明）
+├── cordis.patch.yml     bundle patch layer（插入 /sync 命令）
+├── install.js           一键安装脚本（web/desk/both）
+├── CHANGELOG.md
+├── docs/
+│   └── install-examples.md
+├── test/
+│   └── plugin.test.mjs  单元测试
 ├── README.md
 ├── LICENSE
 └── lib/
@@ -63,8 +70,21 @@ dsh-session-sync/
     └── sync-core.js   同步核心（会话/工作区/缓存/设置/插件）
 ```
 
-插件为 ESM 模块，导出 `name` / `inject` / `apply`，通过 profile patch 的
-`insert` 条目加载（与官方插件一致）。
+插件为 ESM 模块，导出 `name` / `inject` / `apply`；`package.json` 声明
+`dsh.bundle.patch`，作为**正式 profile bundle 插件**，可通过 `dsh plugin add`
+或插件市场安装，无需手工修改 profile patch。
+
+## 插件市场
+
+本插件已提交至 [awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)
+市场 registry（`data/plugins/hajimimaodie8__DSH-Session-Sync.yml`），
+合并后可在 DSH 插件市场（dshmarket）中搜索 "session-sync" 一键安装。
+
+## 测试
+
+```sh
+npm test          # node --test test/
+```
 
 ## 许可
 
