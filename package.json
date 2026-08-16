@@ -1,0 +1,26 @@
+{
+  "name": "dsh-session-sync",
+  "description": "DeepSeek Harness 插件：网页版与 DSH Desktop 桌面版之间的会话/工作区/插件双向同步",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib"
+  ],
+  "license": "MIT",
+  "author": "hajimimaodie8",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hajimimaodie8/DSH-Session-Sync.git"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/dsh-commands": "^0.1.0-rc.6"
+  }
+}
