@@ -11,13 +11,19 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "lib"
+    "lib",
+    "cordis.patch.yml"
   ],
   "license": "MIT",
   "author": "hajimimaodie8",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hajimimaodie8/DSH-Session-Sync.git"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
   },
   "peerDependencies": {
     "@deepseek-ai/cordis": "^4.0.1",

@@ -1,0 +1,5 @@
+# dsh-session-sync bundle patch
+# 作为 profile bundle layer 加载，插入 /sync 命令插件。
+- insert:
+    - id: session-sync
+      name: 'dsh-session-sync'
