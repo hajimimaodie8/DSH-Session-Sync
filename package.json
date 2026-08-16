@@ -14,6 +14,12 @@
     "lib",
     "cordis.patch.yml"
   ],
+  "scripts": {
+    "test": "node --test test/",
+    "install:web": "node install.js web",
+    "install:desk": "node install.js desk",
+    "install:both": "node install.js both"
+  },
   "license": "MIT",
   "author": "hajimimaodie8",
   "repository": {
